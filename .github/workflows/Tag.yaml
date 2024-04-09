@@ -69,3 +69,4 @@ jobs:
       - name: Build Package
         run: |
           poetry build
+          poetry publish

@@ -69,4 +69,5 @@ jobs:
       - name: Build Package
         run: |
           poetry build
+          poetry config pypi-token.pypi ${{secrets.PYPI_CFC_TOKEN}}
           poetry publish

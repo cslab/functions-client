@@ -10,7 +10,7 @@ from .auth import authenticate_keycloak
 
 class Config:  # pylint: disable=too-many-instance-attributes
     config_path: Path = Path()
-    service_url: str = "https://functions.cs-0a.contact-cloud.com"
+    service_url: str = "https://functions.cs-0b.contact-cloud.com"
     _conf: configparser.ConfigParser | None = None
     _client_id: str = ""
     _client_secret: str = ""

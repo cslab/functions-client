@@ -8,7 +8,7 @@ import requests
 import typer
 from rich.console import Console
 from rich.table import Table
-
+from json import JSONDecodeError
 from .config import config
 
 NAME_PATTERN = r"^[^\-\.][\w\-\.]+$"
@@ -67,9 +67,11 @@ def create(name: str = typer.Argument(..., callback=name_callback)):
         console.print("Environment successfully created")
 
     elif response.status_code in (400, 500):
-        console.print(
-            "Error while creating environment: " + response.json()["detail"]["msg"]
-        )
+        try:
+            message = response.json().get("detail")
+        except JSONDecodeError:
+            message = response.text
+        console.print("Error while creating environment: " + message)
         raise typer.Exit(code=1)
 
     else:

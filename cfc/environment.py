@@ -2,13 +2,14 @@ import os
 import re
 import sys
 import tarfile
+from json import JSONDecodeError
 from time import sleep
 
 import requests
 import typer
 from rich.console import Console
 from rich.table import Table
-from json import JSONDecodeError
+
 from .config import config
 
 NAME_PATTERN = r"^[^\-\.][\w\-\.]+$"

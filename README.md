@@ -1,4 +1,4 @@
- <h1><a href="https://github.com/cslab/functions-sdk"><img src="https://www.contact-software.com/design/img/logo-icon.svg" width="50" alt="CONTACT Logo"></a> Functions-Client</h1>
+  <h1><a href="https://github.com/cslab/functions-client"><img src="https://github.com/cslab/functions-client/blob/main/docs/assets/contact-logo.svg" width="50" alt="CONTACT Logo"></a>  Functions-Client</h1>
 
 This CLI tool is used for uploading and managing Functions in CIM Database Cloud.
 

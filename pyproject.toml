@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "contactsoftware-functions-client"
-version = "0.5.3"
+version = "0.5.4"
 readme = "README.md"
 license = "MIT"
 authors = [

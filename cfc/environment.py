@@ -13,7 +13,7 @@ from rich.table import Table
 from .config import config
 
 NAME_PATTERN = r"^[^\-\.][\w\-\.]+$"
-ENV_VARS_PATTERN = r"^([\w:.\/]+=[\w:.\/]+)(,[\w:.\/]+=[\w:.\/]+)*$"
+ENV_VARS_PATTERN = r"^([\w:.\/\-]+=[\w:.\/\-]+)(,[\w:.\/\-]+=[\w:.\/\-]+)*$"
 ENVIRONMENT_ENVVAR_NAME = "CFC_ENVIRONMENT"
 
 env_app = typer.Typer()
@@ -35,7 +35,7 @@ def tag_callback(name: str) -> str:
     return name_callback(name)
 
 
-def env_var_callback(env_vars: str) -> dict:
+def env_var_callback(env_vars: str) -> str:
     if not env_vars:
         return env_vars
     if not re.fullmatch(ENV_VARS_PATTERN, env_vars):

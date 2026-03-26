@@ -26,7 +26,7 @@ The credentials will be stored in a configuration file. The storage location of 
 - Windows: `C:\Users\<username>\AppData\Local\Contact\cfc\config.ini`
 - Linux: `~/.config/cfc/config.ini`
 
-> [!WARNING]  
+> [!WARNING]
 > If you are developing a function, you may want to talk to a non-default function-controller.
 > You can set the URL via `cfc login --service-url https://my-function-controller.domain` or within the configuration file.
 

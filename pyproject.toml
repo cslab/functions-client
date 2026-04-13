@@ -29,5 +29,5 @@ appdirs = ">=1.4.4"
 cfc = 'cfc:main'
 
 [tool.poetry.group.test.dependencies]
-pytest = "^7.4.0"
+pytest = ">=7.4,<10.0"
 requests-mock = "^1.11.0"

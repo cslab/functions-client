@@ -16,6 +16,12 @@ class TestEnvironment(TestCase):
         # test empty input
         env_var_callback("")
 
+        # test special characters in values
+        env_var_callback("VAR1=p@ssw0rd!")
+        env_var_callback("VAR1=value#1")
+        env_var_callback("VAR1=hello!,VAR2=world?")
+        env_var_callback("SECRET=abc$def%ghi^jkl&mno*pqr")
+
         # test invalid input
         with self.assertRaises(typer.BadParameter):
             env_var_callback("VAR1=VALUE1,VAR2=VALUE2,")
@@ -23,3 +29,7 @@ class TestEnvironment(TestCase):
             env_var_callback("VAR1=VALUE1,VAR2=VALUE2,VAR3")
         with self.assertRaises(typer.BadParameter):
             env_var_callback("VAR1=VALUE1,VAR2=VALUE2,VAR3=VALUE3=")
+        with self.assertRaises(typer.BadParameter):
+            env_var_callback("VAR1=value with spaces")
+        with self.assertRaises(typer.BadParameter):
+            env_var_callback("VAR1=val1,VAR2=val=2")

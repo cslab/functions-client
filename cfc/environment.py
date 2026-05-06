@@ -13,7 +13,7 @@ from rich.table import Table
 from .config import config
 
 NAME_PATTERN = r"^[^\-\.][\w\-\.]+$"
-ENV_VARS_PATTERN = r"^([\w:.\/\-]+=[\w:.\/\-]+)(,[\w:.\/\-]+=[\w:.\/\-]+)*$"
+ENV_VARS_PATTERN = r"^([\w:.\/\-]+=[^=,\s]+)(,[\w:.\/\-]+=[^=,\s]+)*$"
 ENVIRONMENT_ENVVAR_NAME = "CFC_ENVIRONMENT"
 
 env_app = typer.Typer()
